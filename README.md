@@ -11,3 +11,10 @@ ANGULAR + EJB
   - NPM `11.6.2`
   - Angular `21.1.2`
   - PrimeNG `21`
+
+- __Server__
+  - Jakarta `11`
+  - Wildfly `37.0.1.Final`
+
+- __DB__
+  - PostrgreSQL 18

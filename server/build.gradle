@@ -1,0 +1,44 @@
+plugins {  
+    id "java"
+    id "war"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+war {
+    archiveFileName = "app.war"
+}
+
+group "com.itmo.nxzage.web4"
+version "1.0.0"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JakartaEE 
+    compileOnly 'jakarta.platform:jakarta.jakartaee-api:11.0.0'
+    // compileOnly 'jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0'
+    // compileOnly 'jakarta.ws.rs:jakarta.ws.rs-api:4.0.0'
+    // compileOnly 'jakarta.ejb:jakarta.ejb-api:4.0.1'
+    // compileOnly 'jakarta.security.enterprise:jakarta.security.enterprise-api:4.0.0'
+
+    // Annotaion Processor
+    compileOnly 'org.projectlombok:lombok:1.18.42'
+    annotationProcessor 'org.projectlombok:lombok:1.18.42'
+    
+
+    // ORM
+    // runtimeOnly 'org.hibernate.orm:hibernate-core:7.2.0.Final'
+}
+
+tasks.register("wf", Copy) {
+    dependsOn war
+    from tasks.war.archiveFile
+    into "/opt/wildfly/standalone/deployments"
+}

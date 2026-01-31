@@ -2,3 +2,9 @@
 .vscode/*
 .vscode
 .history/*
+
+# personal scripts
+wf
+
+# env
+.env
