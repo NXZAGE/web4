@@ -1,0 +1,18 @@
+services:
+  db:
+    build: 
+      context: ./db
+      dockerfile: Dockerfile
+    container_name: web4-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB={$DB_NAME}
+      - POSTGRES_USER={$DB_USER}
+      - POSTGRES_PASSWORD={$DB_PASSWORD}
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - pgdata:/var/lib/postgresql/
+
+volumes:
+  pgdata:
