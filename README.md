@@ -13,7 +13,7 @@ ANGULAR + EJB
   - PrimeNG `21`
 
 - __Server__
-  - Jakarta `11`
+  - Jakarta `10`
   - Wildfly `37.0.1.Final`
 
 - __DB__

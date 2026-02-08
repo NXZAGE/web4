@@ -22,19 +22,20 @@ repositories {
 
 dependencies {
     // JakartaEE 
-    compileOnly 'jakarta.platform:jakarta.jakartaee-api:11.0.0'
-    // compileOnly 'jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0'
-    // compileOnly 'jakarta.ws.rs:jakarta.ws.rs-api:4.0.0'
-    // compileOnly 'jakarta.ejb:jakarta.ejb-api:4.0.1'
-    // compileOnly 'jakarta.security.enterprise:jakarta.security.enterprise-api:4.0.0'
+    compileOnly 'jakarta.platform:jakarta.jakartaee-api:10.0.0'
+
+    // Wildfly Logging
+    compileOnly 'org.jboss.logging:jboss-logging:3.6.1.Final'
+
+    // Microprofile Config API
+    compileOnly 'org.eclipse.microprofile.config:microprofile-config-api:3.1'
 
     // Annotaion Processor
     compileOnly 'org.projectlombok:lombok:1.18.42'
     annotationProcessor 'org.projectlombok:lombok:1.18.42'
     
-
-    // ORM
-    // runtimeOnly 'org.hibernate.orm:hibernate-core:7.2.0.Final'
+    // JWT
+    implementation("com.nimbusds:nimbus-jose-jwt:10.7")
 }
 
 tasks.register("wf", Copy) {
