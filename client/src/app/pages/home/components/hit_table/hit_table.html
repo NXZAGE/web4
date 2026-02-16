@@ -1,0 +1,24 @@
+<p-table [value]="hits()" [paginator]="true" [rows]="5" [sortField]="'id'" [sortOrder]="-1">
+  <ng-template #header>
+    <tr>
+      <th>ID</th>
+      <th>X</th>
+      <th>Y</th>
+      <th>R</th>
+      <th>hit</th>
+      <th>exec</th>
+      <th>timestamp</th>
+    </tr>
+  </ng-template>
+  <ng-template #body let-hit>
+    <tr>
+      <td>{{ hit.id }}</td>
+      <td>{{ hit.x }}</td>
+      <td>{{ hit.y }}</td>
+      <td>{{ hit.r }}</td>
+      <td>{{ hit.isHit }}</td>
+      <td>{{ hit.exec }}</td>
+      <td>{{ hit.registredAt }}</td>
+    </tr>
+  </ng-template>
+</p-table>

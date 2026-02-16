@@ -1,0 +1,24 @@
+<div class="custom-header p-3 shadow-1 flex justify-content-between align-items-center bg-primary-reverse">
+
+  <div class="flex align-items-center">
+    <i class="pi pi-graduation-cap text-4xl mr-2 text-primary"></i>
+
+    <div class="left-label-wrapper flex align-items-end">
+      <span class="left-label text-4xl font-bold line-height-1">LAB4</span>
+      <span class="after-label text-sm font-medium ml-1 mb-1">:472809</span>
+    </div>
+  </div>
+
+  @if (authenticated()) {
+    <div class="right-content flex flex-column align-items-end justify-content-center">
+      <span class="text-sm font-semibold">{{ currentUser()  }}</span>
+      <p-button label="logout" (onClick)="logout()"> </p-button>
+    </div>
+  } @else {
+    <div class="right-content flex flex-column align-items-end justify-content-center">
+      <span class="text-sm font-semibold">by Yegor Nazaikin</span>
+      <span class="text-sm text-500">ISU: 466828</span>
+    </div>
+  }
+
+</div>

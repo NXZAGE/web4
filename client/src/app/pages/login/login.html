@@ -1,0 +1,40 @@
+<div class="login-container">
+  <p-card styleClass="login-card shadow-4">
+    <ng-template pTemplate="header">
+      <div class="card-header">
+        <h2>Welcome Back</h2>
+        <span>Please enter your details</span>
+      </div>
+    </ng-template>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+
+      <div class="field-group">
+        <label for="username">Username</label>
+        <p-iconField iconPosition="left">
+          <p-inputIcon styleClass="pi pi-user"></p-inputIcon>
+          <input type="text" pInputText id="username" formControlName="username" placeholder="Username" class="w-full" />
+        </p-iconField>
+      </div>
+
+      <div class="field-group">
+        <label for="password">Password</label>
+        <p-password id="password" formControlName="password" [toggleMask]="true" [feedback]="false"
+          inputStyleClass="w-full" placeholder="Enter password">
+        </p-password>
+      </div>
+
+      <div class="actions">
+        <p-button label="Sign In" icon="pi pi-sign-in" type="submit" [disabled]="loginForm.invalid" styleClass="w-full">
+        </p-button>
+
+        <div class="register-link">
+          <span>Don't have an account?</span>
+          <p-button label="Sign Up" variant="text" (onClick)="goToRegister()">
+          </p-button>
+        </div>
+      </div>
+
+    </form>
+  </p-card>
+</div>

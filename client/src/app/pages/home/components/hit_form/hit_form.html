@@ -1,0 +1,30 @@
+<div class="hit-form-container">
+  <form [formGroup]="hitForm" (ngSubmit)="submit()" class="p-fluid">
+
+    <div class="field">
+      <label for="x-select">Coordinate X</label>
+      <p-selectButton id="x-select" [options]="coordinateOptions" formControlName="x" [multiple]="false">
+      </p-selectButton>
+    </div>
+
+    <div class="field">
+      <label for="y-slider">Coordinate Y: {{ hitForm.value.y }}</label>
+      <div class="slider-wrapper">
+        <p-slider id="y-slider" formControlName="y" [min]="-3" [max]="5" [step]="0.1">
+        </p-slider>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="r-select">Radius R</label>
+      <p-selectButton id="r-select" [options]="radiusOptions" formControlName="r" [multiple]="false">
+      </p-selectButton>
+    </div>
+
+    <div class="submit-button">
+      <p-button type="submit" label="Hit" icon="pi pi-check" [disabled]="hitForm.invalid">
+      </p-button>
+    </div>
+
+  </form>
+</div>

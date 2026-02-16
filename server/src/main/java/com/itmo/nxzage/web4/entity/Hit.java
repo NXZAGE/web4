@@ -2,6 +2,7 @@ package com.itmo.nxzage.web4.entity;
 
 import java.io.Serializable;
 import java.time.OffsetDateTime;
+import jakarta.json.bind.annotation.JsonbProperty;
 import jakarta.json.bind.annotation.JsonbTransient;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -42,9 +43,11 @@ public class Hit implements Serializable {
     @NotNull
     @Positive
     private Double r;
+    @JsonbProperty("isHit")
     @Column
     @NotNull
     private Boolean hit;
+    @JsonbProperty("exec")
     @Column(name = "exec_time")
     @NotNull
     @Positive

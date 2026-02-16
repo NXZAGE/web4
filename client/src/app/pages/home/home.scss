@@ -1,0 +1,18 @@
+.home-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 100%;
+  align-items: center;
+
+  .table-container {
+    align-items: center;
+  }
+}
+
+// Адаптивность для мобильных устройств
+@media (max-width: 576px) {
+  .home-row {
+    flex-direction: column;
+  }
+}

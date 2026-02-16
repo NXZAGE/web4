@@ -1,0 +1,26 @@
+.custom-header {
+  height: 70px; // Фиксированная высота для стабильности
+  border-bottom: 1px solid var(--surface-border);
+  cursor: default;
+
+  .left-label-wrapper {
+    position: relative;
+
+    .left-label {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
+    .after-label {
+      line-height: 1.2;
+      color: var(--primary-color);
+      text-transform: uppercase;
+    }
+  }
+
+  .right-content {
+    span {
+      line-height: 1.2;
+    }
+  }
+}

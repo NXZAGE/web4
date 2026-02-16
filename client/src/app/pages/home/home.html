@@ -1,5 +1,11 @@
-<p-panel header="This is a home page"> 
-  {{ helloMessage }}
-
-  <p-button> Check Prime Components </p-button>
-</p-panel>
+<div class="home-row">
+  <div class="home-col form-container">
+    <hit-form #hitform/>
+  </div>
+  <div class="home-col target-container">
+    <target [radius]="hitform.currentR()" />
+  </div>
+</div>
+<div class="home-row table-container">
+  <hit-table />
+</div>

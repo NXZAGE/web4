@@ -1,0 +1,52 @@
+<div class="register-container">
+  <p-card styleClass="register-card shadow-4">
+    <ng-template pTemplate="header">
+      <div class="card-header">
+        <h2>Create Account</h2>
+        <span>Join us by filling out the form below</span>
+      </div>
+    </ng-template>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="register-form">
+      <div class="field-group">
+        <label for="username">Username</label>
+        <p-iconField iconPosition="left">
+          <p-inputIcon styleClass="pi pi-user"></p-inputIcon>
+          <input type="text" pInputText id="username" formControlName="username" placeholder="Username" class="w-full" />
+        </p-iconField>
+      </div>
+
+      <div class="field-group">
+        <label for="password">Password</label>
+        <p-password id="password" formControlName="password" [toggleMask]="true" [feedback]="true"
+          promptLabel="Choose a password" weakLabel="Too simple" mediumLabel="Average complexity"
+          strongLabel="Strong password" inputStyleClass="w-full" styleClass="w-full" placeholder="Create password">
+        </p-password>
+      </div>
+
+      <div class="field-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <p-password id="confirmPassword" formControlName="confirmPassword" [toggleMask]="true" [feedback]="false"
+          inputStyleClass="w-full" styleClass="w-full" placeholder="Repeat password">
+        </p-password>
+        <small class="p-error"
+          *ngIf="registerForm.errors?.['mismatch'] && registerForm.get('confirmPassword')?.touched">
+          Passwords do not match
+        </small>
+      </div>
+
+      <div class="actions">
+        <p-button label="Create Account" icon="pi pi-user-plus" type="submit" [disabled]="registerForm.invalid"
+          styleClass="w-full">
+        </p-button>
+
+        <div class="login-link">
+          <span>Already have an account?</span>
+          <p-button label="Log In" variant="text" (onClick)="goToLogin()">
+          </p-button>
+        </div>
+      </div>
+
+    </form>
+  </p-card>
+</div>

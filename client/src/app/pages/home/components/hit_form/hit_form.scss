@@ -1,0 +1,48 @@
+.hit-form-container {
+  max-width: 500px;
+  height: 100%;
+  padding: 2rem;
+  background: var(--surface-card);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--surface-border);
+
+  .field {
+    margin-bottom: 2rem;
+
+    label {
+      display: block;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: var(--text-color);
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+  }
+
+  .slider-wrapper {
+    padding: 0 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .submit-button {
+    margin-top: 2.5rem;
+    
+    p-button {
+      width: 100%;
+    }
+  }
+
+  // Стили для SelectButton, чтобы кнопки не слипались (зависит от темы)
+  :host ::v-deep .p-selectbutton {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+
+    .p-button {
+      flex: 1 1 auto;
+      min-width: 40px;
+      justify-content: center;
+    }
+  }
+}
